@@ -15,7 +15,7 @@
 
       <jaxb:bindings schemaLocation="../xsd/camt.011.001.07.xsd" node="//xs:schema">
           <jaxb:schemaBindings>
-             <jaxb:package name="com.example.myschema"/>
+             <jaxb:package name="org.salemerahal.iso20022"/>
           </jaxb:schemaBindings>
       </jaxb:bindings>
 
