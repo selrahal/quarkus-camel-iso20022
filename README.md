@@ -2,15 +2,20 @@
 
 This project uses the XSD schema files from https://www.iso20022.org/iso-20022-message-definitions to generate java POJOs within a maven project set up to use Quarkus and Camel. 
 
+TODO:
+- [ ] Add a sample CamelContext
+- [ ] Add a sample openapi page
+- [ ] Showcase a camel route using a iso20022 message
+
 ## Setup
 
 The `setup.sh` script only needs to be re-run if you change the URLs located in `iso20022`.
 
 The `setup.sh` script will:
 
-. Download all the XSD files from `iso20022.txt` and place them in `src/main/resources/xsd`.
-. Generate appropriate XJB mapping files in `src/main/resources/xjb` to ensure no duplicate java classes are created. This uses the `src/main/resources/template.xjb` file.
-. Generate an appropriate pom.xml file and plugin configuration for all the XSD/XJB pairs.
+1. Download all the XSD files from `iso20022.txt` and place them in `src/main/resources/xsd`.
+2. Generate appropriate XJB mapping files in `src/main/resources/xjb` to ensure no duplicate java classes are created. This uses the `src/main/resources/template.xjb` file.
+3. Generate an appropriate pom.xml file and plugin configuration for all the XSD/XJB pairs.
 
 ## Create POJOs 
 
