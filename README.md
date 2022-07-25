@@ -1,8 +1,20 @@
-# code-with-quarkus Project
+# quarkus-camel-iso20022
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This project uses the XSD schema files from https://www.iso20022.org/iso-20022-message-definitions to generate java POJOs within a maven project set up to use Quarkus and Camel. 
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+## Setup
+
+The `setup.sh` script only needs to be re-run if you change the URLs located in `iso20022`.
+
+The `setup.sh` script will:
+
+. Download all the XSD files from `iso20022.txt` and place them in `src/main/resources/xsd`.
+. Generate appropriate XJB mapping files in `src/main/resources/xjb` to ensure no duplicate java classes are created.
+. Generate an appropriate pom.xml file and plugin configuration for all the XSD/XJB pairs.
+
+## Create POJOs 
+
+Use `mvn clean package` to generate java files for all of the iso20022 types.
 
 ## Running the application in dev mode
 
@@ -50,11 +62,3 @@ If you want to learn more about building native executables, please consult http
 ## Related Guides
 
 - Camel Core ([guide](https://camel.apache.org/camel-quarkus/latest/reference/extensions/core.html)): Camel core functionality and basic Camel languages: Constant, ExchangeProperty, Header, Ref, Simple and Tokenize
-
-## Provided Code
-
-### RESTEasy JAX-RS
-
-Easily start your RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
